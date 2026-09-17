@@ -82,6 +82,8 @@ class _CalculatorPageState extends State<CalculatorPage> {
     });
   }
 
+  
+
   void _onOperatorPressed(String op) {
     setState(() {
       if (_hasError) {
@@ -235,6 +237,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                       alignment: Alignment.bottomRight,
                       child: Text(
                         _display,
+                        key: const Key('calc_display'),
                         style: const TextStyle(
                           fontSize: 64,
                           fontWeight: FontWeight.w300,
@@ -298,7 +301,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
             flex: spec.wide ? 2 : 1,
             child: Padding(
               padding: const EdgeInsets.all(6),
-              child: _CalcButton(spec: spec),
+              child: _CalcButton(key: Key('btn_${spec.label}'), spec: spec),
             ),
           );
         }).toList(),
