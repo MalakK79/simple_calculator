@@ -4,6 +4,12 @@
 // screen buttons (found by the keys assigned in lib/main.dart) and checking
 // what ends up on the display (found by the 'calc_display' key).
 
+// Widget tests for the simple calculator app.
+//
+// Each test drives the calculator the way a user would: tapping the on
+// screen buttons (found by the keys assigned in lib/main.dart) and checking
+// what ends up on the display (found by the 'calc_display' key).
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -22,16 +28,16 @@ String displayText(WidgetTester tester) {
 
 void main() {
   testWidgets('Calculator starts with 0 on the display', (
-    WidgetTester tester,
-  ) async {
+      WidgetTester tester,
+      ) async {
     await tester.pumpWidget(const CalculatorApp());
 
     expect(displayText(tester), '0');
   });
 
   testWidgets('Tapping digits builds a multi-digit number on the display', (
-    WidgetTester tester,
-  ) async {
+      WidgetTester tester,
+      ) async {
     await tester.pumpWidget(const CalculatorApp());
 
     await tapButton(tester, 'btn_1');
@@ -53,8 +59,8 @@ void main() {
   });
 
   testWidgets('Division by zero shows an Error instead of crashing', (
-    WidgetTester tester,
-  ) async {
+      WidgetTester tester,
+      ) async {
     await tester.pumpWidget(const CalculatorApp());
 
     await tapButton(tester, 'btn_8');
@@ -66,8 +72,8 @@ void main() {
   });
 
   testWidgets('Clear (C) resets the display back to 0', (
-    WidgetTester tester,
-  ) async {
+      WidgetTester tester,
+      ) async {
     await tester.pumpWidget(const CalculatorApp());
 
     await tapButton(tester, 'btn_9');
