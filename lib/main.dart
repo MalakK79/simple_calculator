@@ -336,7 +336,7 @@ class _ButtonSpec {
 class _CalcButton extends StatelessWidget {
   final _ButtonSpec spec;
 
-  const _CalcButton({required this.spec});
+  const _CalcButton({super.key, required this.spec});
 
   @override
   Widget build(BuildContext context) {
